@@ -5,6 +5,9 @@ on:
   push:
   pull_request:
 
+permissions:
+  contents: write   # 关键：允许创建 Release 和上传文件
+
 jobs:
   build:
 
@@ -27,3 +30,15 @@ jobs:
     - name: build samples
       run: |
         ./gradlew build
+
+    - name: Upload APKs to Artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: apks
+        path: '**/build/outputs/apk/**/*.apk'
+
+    - name: Upload APKs to Release
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v2
+      with:
+        files: '**/build/outputs/apk/**/*.apk'
