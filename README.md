@@ -7,7 +7,7 @@ For an explanation of the layout of this repository, see
 
 ## Build and run
 
-[![build](https://github.com/android/ndk-samples/actions/workflows/build.yml/badge.svg)](https://github.com/android/ndk-samples/actions)
+[![build](https://github.com/android/ndk-samples/actions/workflows/build.yml/badge.svg)](https://github.com/mckulipaniang/ndk-samples/actions)
 
 1. Clone the repository
 2. Open the whole project in Android Studio
